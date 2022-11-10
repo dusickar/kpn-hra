@@ -1,5 +1,17 @@
+document.getElementById("playGame");
+
 function game() {
-    var playGame = document.getElementById(playGame);
+    
+    //Výsledok hry
+    function win() {
+        if (userChoice === k) {
+            alert('Vyhral si!')
+            console.log('Výhra user!')
+            alert('Pre ďalšie kolo klikni na OK.');
+        // } else if (PcChoice() === n);
+        }
+    };
+
     alert('Hra začína! Zadaj hodnotu (k, p, n) a uvidíš či si vyhral!');
 
 
@@ -13,46 +25,42 @@ function game() {
         for (let i = 0; i < length; i++) {
             str += chars.charAt(Math.floor(Math.random() * chars.length));
         }
+        console.log('PC : ' + str ) 
     
         return str;
-    
     };
-    console.log('PC:', PcChoice()); 
+    
     
     
     //Voľba usera
     let userChoice = prompt('Tvoja voľba?');
     kpr = ['k',  'p',  'n'];
-    console.log('User:', userChoice);
+    console.log('User : ', userChoice);
     
-    
+
+    alert('Voľba PC : ' + PcChoice());
+
+
 };
 
 
-//Výsledok hry
-function win() {
-    if (userChoice === k && PcChoice === n) {
-        alert('Vyhral si!')
-        console.log('Výhra user!')
-        return;
-    };
-    
-    alert('Pre ďalšie kolo klikni na OK.');
 
 
 
-    if (userChoice === 'p')
-        if (PcChoice === 'k')
-            alert('Vyhral si!')
-            console.log('Výhra user!')
-                alert('Pre ďalšie kolo klikni na OK.');
 
-    if (userChoice === 'n')
-        if (PcChoice === 'p')
-            alert('Vyhral si!')
-            console.log('Výhra user!')
-                alert('Pre ďalšie kolo klikni na OK.');
-};
+
+//     if (userChoice === 'p')
+//         if (PcChoice === 'k')
+//             alert('Vyhral si!')
+//             console.log('Výhra user!')
+//                 alert('Pre ďalšie kolo klikni na OK.');
+
+//     if (userChoice === 'n')
+//         if (PcChoice === 'p')
+//             alert('Vyhral si!')
+//             console.log('Výhra user!')
+//                 alert('Pre ďalšie kolo klikni na OK.');
+// };
 
 
 
