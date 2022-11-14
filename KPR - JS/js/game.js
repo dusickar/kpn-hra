@@ -1,17 +1,7 @@
 document.getElementById("playGame");
 
-function game() {
-    
-    //Výsledok hry
-    function win() {
-        if (userChoice === k) {
-            alert('Vyhral si!')
-            console.log('Výhra user!')
-            alert('Pre ďalšie kolo klikni na OK.');
-        // } else if (PcChoice() === n);
-        }
-    };
-
+function game( result ) {
+ 
     alert('Hra začína! Zadaj hodnotu (k, p, n) a uvidíš či si vyhral!');
 
 
@@ -41,7 +31,64 @@ function game() {
     alert('Voľba PC : ' + PcChoice());
 
 
+    //Výsledok hry
+    function result() {
+        console.log(PcChoice);
+        console.log(userChoice);
+
+        if (console.log(userChoice == 'k' && PcChoice == 'k')) {
+            console.log('Remíza!')
+            alert('Remíza!');
+            alert('Pre ďalšie kolo klikni na OK.');
+        } else if (console.log(userChoice == 'k' && PcChoice == 'n')) {
+            console.log('Výhra user!')
+            alert('Výhra');
+        } else if (console.log(userChoice == 'k' && PcChoice == 'p')) {
+            console.log('Prehra user!')
+            alert('Prehra!'); 
+        };
+    };
 };
+
+// };
+
+    // // const resultP = 'p';
+    // switch (resultP) {
+    //     case 'k':
+    //         console.log('Výhra user!')
+    //         alert('Výhra')
+    //         alert('Pre ďalšie kolo klikni na OK.');
+    //         break;
+    //     case 'p' :
+    //         console.log('Remíza!')
+    //         alert('Remíza!')
+    //         alert('Pre ďalšie kolo klikni na OK.');
+    //         break;
+    //     case 'n' : 
+    //         console.log('Prehra user!')
+    //         alert('Prehra!')
+    //         alert('Pre ďalšie kolo klikni na OK.');
+    //         break;
+    // }
+    // // const resultN = 'n';
+    // switch (resultN) {
+    //     case 'k':
+    //         console.log('Prehra user!')
+    //         alert('Prehra!')
+    //         alert('Pre ďalšie kolo klikni na OK.');
+    //         break;
+    //     case 'p' :
+    //         console.log('Výhra user!')
+    //         alert('Výhra!')
+    //         alert('Pre ďalšie kolo klikni na OK.');
+    //         break;
+    //     case 'n' : 
+    //         console.log('Remíza!')
+    //         alert('Remíza!')
+    //         alert('Pre ďalšie kolo klikni na OK.');
+    //         break;
+    // }
+// };
 
 
 
