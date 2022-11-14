@@ -47,6 +47,7 @@ function game( result ) {
             console.log('Prehra user!')
             alert('Prehra!'); 
         };
+        return result;
     };
 };
 
