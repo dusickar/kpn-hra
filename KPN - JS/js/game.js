@@ -34,87 +34,82 @@ function game() {
     
     
     
-    //Výsledok hry
-    scoreUser = 0;
-    // scoreUser = scoreUser.textContent;
-    // scoreUser = Number(scoreUser + 1);
-    // scoreUser = scoreUser.textContent;
+    //POČÍTADLO BODOV USER/PC
+    
+    // USER
+    let scoreUser = 0;
+    document.getElementById('userscore').innerHTML = scoreUser;
+    
+    let countWin = 0;
+    document.getElementById('wincount').innerHTML = countWin;
     
     if (userChoice === 'k' && oneCall === 'n') {
         console.log('Výhra user!')
         alert('Výhra');
-        scoreUser++;
+        scoreUser ++;
+        countWin++; // pripočítanie + 1 ku skóre
     } else if (userChoice === 'p' && oneCall === 'k') {
         console.log('Výhra user!')
         alert('Výhra');
-        scoreUser++;
+        scoreUser ++;
+        countWin++;
     } else if (userChoice === 'n' && oneCall === 'p') {
         console.log('Výhra user!')
         alert('Výhra');
-        scoreUser++;
+        scoreUser ++;
+        countWin++;
     };
     
-    
-    
-    // KAMEŇ
-    if (userChoice === 'k' && oneCall === 'k') {
-        console.log('Remíza!')
-        alert('Remíza!');
-    // } else if (userChoice === 'k' && oneCall === 'n') {
-    //     console.log('Výhra user!')
-    //     alert('Výhra');
-    } else if (userChoice === 'k' && oneCall === 'p') {
+  
+    //PC
+    let scorePc = 0;
+    document.getElementById('pcscore').innerHTML = scorePc;
+
+    let countLosing = 0;
+    document.getElementById('losingcount').innerHTML = countLosing;
+
+    if (userChoice === 'k' && oneCall === 'p') {
         console.log('Prehra user!')
         alert('Prehra!'); 
-    };
-
-    //PAPIER
-    if (userChoice === 'p' && oneCall === 'p') {
-        console.log('Remíza!')
-        alert('Remíza!');
-        // } else if (userChoice === 'p' && oneCall === 'k') {
-            //     console.log('Výhra user!')
-            //     alert('Výhra');
+        scorePc++;
     } else if (userChoice === 'p' && oneCall === 'n') {
         console.log('Prehra user!')
         alert('Prehra!'); 
-    };
-    
-    //NOŽNICE
-    if (userChoice === 'n' && oneCall === 'n') {
-        console.log('Remíza!')
-        alert('Remíza!');
-    // } else if (userChoice === 'n' && oneCall === 'p') {
-        //     console.log('Výhra user!')
-        //     alert('Výhra');
+        scorePc++;
     } else if (userChoice === 'n' && oneCall === 'k') {
         console.log('Prehra user!')
         alert('Prehra!'); 
+        scorePc++;
     };
-    
-    
-    // Skóre
-    // const scoreUser = document.getElementById('user');
-    
-    // scoreUser.addEventListener(win(), function() {
-    
-        //    const userscoreElement = this.nextElementSibling,
-        //        userscore = Number( userscoreElement.textContent );
-        
-        //        userscore = userscore + 1;
-        //        userscoreElement.textContent = userscore;
-        
-        
-    //    console.log( this );
-    
-    // });
-    
-    
-    
+
+
+    let countDraw = 0;
+    document.getElementById('drawcount').innerHTML = countDraw;
+
+    if (userChoice === 'k' && oneCall === 'k') {
+        console.log('Remíza!')
+        alert('Remíza!');
+        countDraw++;
+    } else if (userChoice === 'p' && oneCall === 'p') {
+        console.log('Remíza!')
+        alert('Remíza!');
+        countDraw++;
+    } else if (userChoice === 'n' && oneCall === 'n') {
+        console.log('Remíza!')
+        alert('Remíza!');
+        countDraw++;
+    }; 
+
+
+    document.getElementById('pcscore').innerHTML = scorePc;
+    document.getElementById('losingcount').innerHTML = countLosing;
+    document.getElementById('wincount').innerHTML = countWin;
+    document.getElementById('userscore').innerHTML = scoreUser;
+    document.getElementById('drawcount').innerHTML = countDraw;
+
 }; 
 
-scoreUser = document.getElementById("userscore").innerHTML
-// document.getElementById("pcscore").innerHTML = scorePC
+
 
 playGame.addEventListener('click', game);
 nextGame.addEventListener('click', game);
