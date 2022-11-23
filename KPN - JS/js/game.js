@@ -1,6 +1,31 @@
 document.getElementById("playGame");
 document.getElementById("nextGame");
 
+    // USER skóre
+    let scoreUser = 0;
+    document.getElementById('userscore').innerHTML = scoreUser;
+    
+    // PC skóre
+    let scorePc = 0;
+    document.getElementById('pcscore').innerHTML = scorePc;
+
+
+
+    // POČET VÝHIER  
+    let countWin = 0;
+    document.getElementById('wincount').innerHTML = countWin;
+
+    // POČET PREHIER
+    let countLosing = 0;
+    document.getElementById('losingcount').innerHTML = countLosing;
+
+    // POČET REMÍZ
+    let countDraw = 0;
+    document.getElementById('drawcount').innerHTML = countDraw;
+
+
+
+
 function game() {
  
     alert('Hra začína! Zadaj hodnotu (k, p, n) a uvidíš či si vyhral!');
@@ -14,35 +39,10 @@ function game() {
     console.log('User : ', userChoice);
     
     alert('Voľba PC : ' + oneCall);
-    
-    
-    //Voľba PC
-    function PcChoice() {
-        const length = 1; 
-        // Declare all characters
-        const chars = 'kpn';
-        
-        // Pick characters randomly
-        let str = '';
-        for (let i = 0; i < length; i++) {
-            str += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        console.log('PC : ' + str ) 
-        
-        return str;
-    } 
-    
-    
-    
-    //POČÍTADLO BODOV USER/PC
-    
-    // USER
-    let scoreUser = 0;
-    document.getElementById('userscore').innerHTML = scoreUser;
-    
-    let countWin = 0;
-    document.getElementById('wincount').innerHTML = countWin;
-    
+
+
+   
+    // Podmienky pre výhru
     if (userChoice === 'k' && oneCall === 'n') {
         console.log('Výhra user!')
         alert('Výhra');
@@ -59,33 +59,28 @@ function game() {
         scoreUser ++;
         countWin++;
     };
+
     
-  
-    //PC
-    let scorePc = 0;
-    document.getElementById('pcscore').innerHTML = scorePc;
-
-    let countLosing = 0;
-    document.getElementById('losingcount').innerHTML = countLosing;
-
+    // Podmienky pre prehru
     if (userChoice === 'k' && oneCall === 'p') {
         console.log('Prehra user!')
         alert('Prehra!'); 
         scorePc++;
+        countLosing++;
     } else if (userChoice === 'p' && oneCall === 'n') {
         console.log('Prehra user!')
         alert('Prehra!'); 
         scorePc++;
+        countLosing++;
     } else if (userChoice === 'n' && oneCall === 'k') {
         console.log('Prehra user!')
         alert('Prehra!'); 
         scorePc++;
+        countLosing++;
     };
 
-
-    let countDraw = 0;
-    document.getElementById('drawcount').innerHTML = countDraw;
-
+   
+    // Podmienky pre remízu
     if (userChoice === 'k' && oneCall === 'k') {
         console.log('Remíza!')
         alert('Remíza!');
@@ -101,13 +96,29 @@ function game() {
     }; 
 
 
+    // Vypísanie na obrazovku jednotlivých počítadiel
     document.getElementById('pcscore').innerHTML = scorePc;
     document.getElementById('losingcount').innerHTML = countLosing;
     document.getElementById('wincount').innerHTML = countWin;
     document.getElementById('userscore').innerHTML = scoreUser;
     document.getElementById('drawcount').innerHTML = countDraw;
-
-}; 
+};    
+    
+//Voľba PC
+function PcChoice() {
+    const length = 1; 
+    // Declare all characters
+    const chars = 'kpn';
+    
+    // Pick characters randomly
+    let str = '';
+    for (let i = 0; i < length; i++) {
+        str += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    console.log('PC : ' + str ) 
+    
+    return str;
+} 
 
 
 
