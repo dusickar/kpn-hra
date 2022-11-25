@@ -1,5 +1,6 @@
 document.getElementById("playGame");
 document.getElementById("nextGame");
+document.getElementById("history");
 
     // USER skóre
     let scoreUser = 0;
@@ -23,7 +24,14 @@ document.getElementById("nextGame");
     let countDraw = 0;
     document.getElementById('drawcount').innerHTML = countDraw;
 
-
+    let score = []; 
+    let round = [];
+    let obj = {
+        kamen: 0,
+        papier: 0,
+        noznice: 0
+    };   
+   
 
 
 function game() {
@@ -47,17 +55,26 @@ function game() {
         console.log('Výhra user!')
         alert('Výhra');
         scoreUser ++;
-        countWin++; // pripočítanie + 1 ku skóre
+        countWin++;
+        obj.kamen++;
+        round++;
+        score.push(round + '.kolo :' + ' Výhra user!'); // pripočítanie + 1 ku skóre
     } else if (userChoice === 'p' && oneCall === 'k') {
         console.log('Výhra user!')
         alert('Výhra');
         scoreUser ++;
         countWin++;
+        obj.papier++;
+        round++;
+        score.push(round + '.kolo :' + ' Výhra user!'); // pripočítanie + 1 ku skóre
     } else if (userChoice === 'n' && oneCall === 'p') {
         console.log('Výhra user!')
         alert('Výhra');
         scoreUser ++;
-        countWin++;
+        countWin++; 
+        obj.noznice++;
+        round++;
+        score.push(round + '.kolo :' + ' Výhra user!'); // pripočítanie + 1 ku skóre
     };
 
     
@@ -67,16 +84,25 @@ function game() {
         alert('Prehra!'); 
         scorePc++;
         countLosing++;
+        obj.kamen++;
+        round++;
+        score.push(round + '.kolo :' + ' Prehra user!'); // pripočítanie + 1 ku skóre
     } else if (userChoice === 'p' && oneCall === 'n') {
         console.log('Prehra user!')
         alert('Prehra!'); 
         scorePc++;
         countLosing++;
+        obj.papier++;
+        round++;
+        score.push(round + '.kolo :' + ' Prehra user!'); // pripočítanie + 1 ku skóre
     } else if (userChoice === 'n' && oneCall === 'k') {
         console.log('Prehra user!')
         alert('Prehra!'); 
         scorePc++;
         countLosing++;
+        obj.noznice++;
+        round++;
+        score.push(round + '.kolo :' + ' Prehra user!'); // pripočítanie + 1 ku skóre
     };
 
    
@@ -85,16 +111,26 @@ function game() {
         console.log('Remíza!')
         alert('Remíza!');
         countDraw++;
+        obj.kamen++;
+        round++;
+        score.push(round + '.kolo :' + ' Remíza!'); // pripočítanie + 1 ku skóre
     } else if (userChoice === 'p' && oneCall === 'p') {
         console.log('Remíza!')
         alert('Remíza!');
         countDraw++;
+        obj.papier++;
+        round++;
+        score.push(round + '.kolo :' + ' Remíza!'); // pripočítanie + 1 ku skóre
     } else if (userChoice === 'n' && oneCall === 'n') {
         console.log('Remíza!')
         alert('Remíza!');
         countDraw++;
+        obj.noznice++;
+        round++;
+        score.push(round + '.kolo :' + ' Remíza!'); // pripočítanie + 1 ku skóre
     }; 
 
+    
 
     // Vypísanie na obrazovku jednotlivých počítadiel
     document.getElementById('pcscore').innerHTML = scorePc;
@@ -102,7 +138,30 @@ function game() {
     document.getElementById('wincount').innerHTML = countWin;
     document.getElementById('userscore').innerHTML = scoreUser;
     document.getElementById('drawcount').innerHTML = countDraw;
-};    
+    document.getElementById('skore').innerHTML = score;
+
+    document.getElementById('kamen').innerHTML =obj.kamen;
+    document.getElementById('papier').innerHTML =obj.papier;
+    document.getElementById('noznice').innerHTML =obj.noznice;
+
+
+}; 
+
+
+// HISTÓRIA
+function history(skore, round, score) {
+    history.addEventListener('click', history)
+
+    const list = document.getElementById(skore),
+			newItem = document.createElement('li');
+
+		newItem.textContent = round;
+		newItem.textContent = score;
+		list.appendChild(newItem);
+       
+    console.log;
+};
+
     
 //Voľba PC
 function PcChoice() {
@@ -120,10 +179,9 @@ function PcChoice() {
     return str;
 } 
 
-
-
 playGame.addEventListener('click', game);
 nextGame.addEventListener('click', game);
+
 
 
 
