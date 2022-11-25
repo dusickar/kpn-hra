@@ -38,20 +38,20 @@
                                                 <p id="userscore" class="display-4 ms-3 text-success fw-bold">0</p>
                                             </p>
                                         </div>
-                                        <div class="col-4 mt-3 ms-4">
+                                        <div class="col-4 mt-3">
                                             <i class="fa-solid fa-minus fa-3x"></i>
                                         </div>
                                         <div class="col-4">
                                             <p>
                                                 <i class="fa-solid fa-computer fa-5x"></i>
-                                                <p id="pcscore" class="display-4 ms-4 text-success fw-bold">0</p>
+                                                <p id="pcscore" class=" ms-3 display-4 text-success fw-bold">0</p>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary me-auto">História</button>
+                                <a href="#historyround" type="button" id="history" class="btn btn-primary me-auto">História</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Koniec hry</button>
                                 <button type="button" class="btn btn-success" id="nextGame">Ďalšie kolo</button>
                             </div>
@@ -136,9 +136,39 @@
 
             <hr>
 
+            <div id="historyround">
+                <h2 class="h1 mb-4">História kôl</h2>
+                <ul id="skore">
+                    
+                </ul>
+
+                <hr>
+
+                <!-- POČÍTADLO KAMEN/PAPIER/NOZNICE -->
+                <div>
+                    <div class="row">
+                        <h2 class="h1 mb-4">Počítadlo kameň/papier/nožnice</h2>
+                        <div class="col-sm-4 mb-3 mb-sm-0 mt-2">
+                            <p class="text-center h5"><span class="fw-bolder">Kameň:</span> <span id="kamen" class="text-center fw-normal">0</span></p>
+                        </div>
+    
+                        <div class="col-sm-4 mb-3 mb-sm-0 mt-2">
+                            <p class="text-center h5"><span class="fw-bolder">Papier:</span> <span id="papier" class="text-center fw-normal">0</span></p>
+                        </div>
+    
+                        <div class="col-sm-4 mb-3 mb-sm-0 mt-2">
+                            <p class="text-center h5"><span class="fw-bolder">Nožnice:</span> <span id="noznice" class="text-center fw-normal">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
             <!-- POČÍTADLO VÝHIER/REMÍZ/PREHIER -->
             <div>
                 <div class="row">
+                    <h2 class="h1 mb-4">Počítadlo výhier/remíz/prehier</h2>
                     <div class="col-sm-4 mb-3 mb-sm-0 mt-2">
                         <p class="text-center h5"><span class="fw-bolder">Počet výhier:</span> <span id="wincount" class="text-center fw-normal">0</span></p>
                     </div>
